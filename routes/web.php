@@ -53,3 +53,23 @@ Route::get('latihan/{makan}/{minum}/{bayar}',function($a,$b,$c)
      "saya  minnum ".$b.'<br>'.
      "total harga Rp. ".$c;
 });
+//ROute optional parameter
+Route::get('halo/{nama?}',function($nama='nurhadi')
+{
+   return 'Halo Nama saya adalah '.$nama; 
+});
+Route::get('sha/{nama?}/{minum?}/{harga?}',function($makan=null,$minum=null,$harga=null)
+{
+    if ($makan) {
+        echo 'anda mememsan '.$makan;
+    }if($minum){
+        echo ' & '.$minum;
+    }if ($harga) {
+        echo '<br>jumlah harga '.$harga;
+    }
+    if(!$makan && !$minum && !$harga) {
+        echo "anda tidak memesan";
+ 
+    }
+
+});
