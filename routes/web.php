@@ -73,3 +73,50 @@ Route::get('sha/{nama?}/{minum?}/{harga?}',function($makan=null,$minum=null,$har
     }
 
 });
+//mencari semua model
+Route::get('/testmodel', function()
+ {
+      $query = App\Post::all() ;
+       return $query; 
+});
+//mencari model berdasarkan id
+Route::get('testmodel1',function()
+{
+    $query1=App\Post::find(1);
+    return $query1;
+});
+//mencari model berdasarkan title
+Route::get('testmodel2',function()
+{
+    $query2=App\post::where('title','like','%amalan%')->get();
+    return $query2;
+});
+//mengubah record,(hapus semua isi function)
+Route::get('testmodel3',function()
+{
+    $post=App\post::find(1);
+    $post->title="Tips Cepat Nikahdsasddasdasads";
+    $post->save();
+    return $post;
+});
+//mehapusnghapus record,(hapus semua isi function)
+Route::get('testmodel4',function()
+{
+    $post=App\post::find(3);
+    $post->delete();
+});
+//menambah record
+Route::get('testmodel5',function()
+{
+    $post=new App\post;
+    $post->title="7 amalan pembuka jodoh";
+    $post->content = "shalat malam, sedekah, puasa sunah, silaturahmi, senyum, doa, tobat";
+    $post->save();
+    return $post;
+});
+Route::get('gaji',function()
+{
+    $post=App\penggajian::all();
+    return $post;
+
+});
