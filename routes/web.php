@@ -120,3 +120,37 @@ Route::get('gaji',function()
     return $post;
 
 });
+Route::get('/data-gaji-1',function()
+{
+    $gaji=App\Penggajian::where('agama','hindu')->get();
+
+    return $gaji;
+});
+Route::get('/data-gaji-2',function()
+{
+    $gaji=App\Penggajian::select('id','nama')->get();
+
+    return $gaji;
+});
+Route::get('/data-gaji-3',function()
+{
+    $gaji=App\Penggajian::select('id','nama','jabatan')->where('jabatan','OB')->get();
+
+    return $gaji;
+});
+Route::get('data-gaji/{id}',function($id){
+    $gaji=App\Penggajian::find($id);
+    return $gaji;
+});
+Route::get('tambah-data-gaji',function()
+{
+    $gaji=New App\Penggajian();
+    $gaji->nama='indah mabro';
+    $gaji->jabatan='sekretaris';
+    $gaji->jenis_kelamin='perempuan';
+    $gaji->alamat='Bojong Yelow';
+    $gaji->total_gaji='5000';
+    $gaji->agama='islam';
+    $gaji->save();
+    return $gaji;
+});

@@ -15,7 +15,7 @@ class PenggajianTable extends Seeder
              ['nama'=>'boa','jabatan'=>'assisten DKM','jenis_kelamin'=>'laki-laki','alamat'=>'bandung','agama'=>'islam','total_gaji'=>'4jt'],
              ['nama'=>'al','jabatan'=>'humas','jenis_kelamin'=>'laki-laki','alamat'=>'bandung','agama'=>'islam','total_gaji'=>'3jt'],
              ['nama'=>'ucup','jabatan'=>'Marbot','jenis_kelamin'=>'laki-laki','alamat'=>'bandung','agama'=>'islam','total_gaji'=>'2jt'],
-             ['nama'=>'ujang','jabatan'=>'OB','jenis_kelamin'=>'laki-laki','alamat'=>'bandung','agama'=>'islam','total_gaji'=>'1jt']
+             ['nama'=>'ujang','jabatan'=>'OB','jenis_kelamin'=>'laki-laki','alamat'=>'bandung','agama'=>'hindu','total_gaji'=>'1jt']
              
              
     ];
