@@ -62,17 +62,23 @@ class MyController extends Controller
         }
         if ($makan) {
             echo 'anda mememsan '.$makan;
-        }if ($harga>15000) {
+        } if (isset($harga)) {
+        
+        if ($harga>15000) {
             echo 'dengan ukuran jumbo';
 
-        }if ($harga<15000 && $harga>75000) {
+        }if ($harga<15000 && $harga>7000) {
             echo 'dengan ukuran medium';
 
-        }if ($harga<75000) {
+        }if ($harga<7000 && $harga>=1) {
             echo 'dengan ukuran small';
 
+        }if ($harga<=1) {
+            echo ' Anda memasukan harga yang salah';
+
         }
+    
             
-        
+    }
     }
 }

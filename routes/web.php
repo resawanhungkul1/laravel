@@ -167,3 +167,39 @@ Route::get('agama','MyController@agama');
 Route::get('kelas','MyController@kelas');
 Route::get('/kucing/{warna?}','MyController@kucing');
 Route::get('/beli/{barang?}/{harga?}/','MyController@beli');
+//CRUD BOOK
+Route::get('book','BookController@index');
+Route::get('book-create/{judul?}','BookController@create');
+Route::get('book-show/{a}','BookController@show');
+Route::get('book-edit/{id}/{jdl}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');
+Route::get('tampil','BookController@tampil');
+Route::get('meng','BookController@menghitung');
+//CRUD ARTIKEL
+Route::get('artikel','ArtikelController@index');
+Route::get('artikel/create','ArtikelController@create');
+Route::POST('artikel','ArtikelController@store');
+Route::get('artikel/{id}','ArtikelController@show');
+Route::get('artikel/{id}/edit','ArtikelController@edit');
+Route::PUT('artikel/{id}/edit','ArtikelController@update');
+Route::delete('artikel/{id}/delete','ArtikelController@destroy');
+//menggunakan perintah resource
+Route::resource('artikel-2','ArtikelController');
+//Passing data
+Route::get('pasing','PracticeController@pass');
+Route::get('pasing1','PracticeController@pass1');
+Route::get('pasing2','PracticeController@latihan');
+Route::get('pasing3','BarangController@index');
+Route::resource('barang','BarangController');
+//Books
+Route::resource('buku','BookController');
+//Blade
+Route::get('home',function(){
+    return view('home');
+});
+Route::get('about',function(){
+    return view('about');
+});
+Route::get('contact',function(){
+    return view('contact');
+});
